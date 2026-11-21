@@ -1,0 +1,60 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", Arial, sans-serif; background: linear-gradient(120deg, #eef2ff, #fdf2f8, #ecfeff); background-size: 300% 300%; animation: bgMove 14s ease infinite; color: #1f2937; min-height: 100vh; }
+@keyframes bgMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes popIn { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+header { background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899, #4f46e5); background-size: 300% 300%; animation: bgMove 8s ease infinite; color: #fff; padding: 34px 20px; text-align: center; border-radius: 0 0 28px 28px; box-shadow: 0 8px 24px rgba(124, 58, 237, .35); }
+header h1 { font-size: 36px; letter-spacing: 1px; animation: float 3s ease-in-out infinite; }
+header p { opacity: .9; margin-top: 6px; }
+main { max-width: 960px; margin: 22px auto; padding: 0 14px; }
+.card { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(79, 70, 229, .12); animation: slideUp .6s ease both; }
+h2 { font-size: 20px; margin-bottom: 14px; color: #4338ca; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.stat { border-radius: 16px; padding: 16px; text-align: center; color: #fff; box-shadow: 0 6px 16px rgba(0, 0, 0, .15); animation: popIn .5s ease both; transition: transform .25s; }
+.stat:hover { transform: translateY(-6px) scale(1.04); }
+.stat b { display: block; font-size: 32px; }
+.stat span { font-size: 14px; opacity: .95; }
+.s-Total { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.s-Applied { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+.s-Interview { background: linear-gradient(135deg, #f59e0b, #f97316); }
+.s-Offer { background: linear-gradient(135deg, #10b981, #22c55e); }
+.s-Rejected { background: linear-gradient(135deg, #ef4444, #ec4899); }
+
+form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+form label { font-size: 13px; color: #6b7280; display: flex; flex-direction: column; gap: 4px; }
+input, select, textarea { padding: 10px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 14px; font-family: inherit; width: 100%; transition: border-color .25s, box-shadow .25s; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #7c3aed; box-shadow: 0 0 0 4px rgba(124, 58, 237, .15); }
+textarea { grid-column: 1 / -1; min-height: 70px; resize: vertical; }
+button { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: #fff; border: 0; padding: 11px 18px; border-radius: 10px; font-size: 15px; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+button:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(79, 70, 229, .4); }
+button:active { transform: scale(.96); }
+form button { grid-column: 1 / -1; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.toolbar h2 { margin: 0; }
+.toolbar div { display: flex; gap: 8px; flex-wrap: wrap; }
+.toolbar input, .toolbar select { width: auto; }
+
+.job { border: 1px solid #e5e7eb; border-left: 6px solid #3b82f6; border-radius: 12px; padding: 14px; margin-bottom: 12px; display: grid; gap: 6px; background: #fff; animation: slideUp .45s ease both; transition: transform .25s, box-shadow .25s; }
+.job:hover { transform: translateX(6px); box-shadow: 0 6px 16px rgba(0, 0, 0, .1); }
+.job.Interview { border-left-color: #f59e0b; }
+.job.Offer { border-left-color: #10b981; }
+.job.Rejected { border-left-color: #ef4444; }
+.job h3 { font-size: 17px; }
+.job h3 small { font-weight: 400; color: #6b7280; }
+.job p { font-size: 14px; color: #4b5563; }
+.job a { color: #7c3aed; font-size: 14px; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; color: #fff; margin-left: 8px; vertical-align: middle; }
+.badge.Applied { background: #3b82f6; }
+.badge.Interview { background: #f59e0b; }
+.badge.Offer { background: #10b981; animation: float 2s ease-in-out infinite; }
+.badge.Rejected { background: #ef4444; }
+.actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.actions select { width: auto; }
+.actions .del { background: linear-gradient(135deg, #ef4444, #ec4899); padding: 8px 14px; font-size: 14px; }
+.due { color: #dc2626; font-weight: 600; animation: float 1.2s ease-in-out infinite; display: inline-block; }
+.empty { text-align: center; color: #9ca3af; padding: 24px; }
+footer { text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerPilot - Job Application Tracker</title>
+  <link rel="stylesheet" href="careerpilot.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>CareerPilot</h1>
+      <p>Track every job you apply for, in one place</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats" id="stats"></section>
+
+    <section class="card">
+      <h2>Add Job Application</h2>
+      <form id="jobForm">
+        <input type="text" id="company" placeholder="Company name *" required>
+        <input type="text" id="role" placeholder="Job role *" required>
+        <input type="url" id="link" placeholder="Job link (optional)">
+        <label>Applied on <input type="date" id="appliedDate" required></label>
+        <label>Follow-up on <input type="date" id="followUp"></label>
+        <select id="status">
+          <option>Applied</option>
+          <option>Interview</option>
+          <option>Offer</option>
+          <option>Rejected</option>
+        </select>
+        <textarea id="notes" placeholder="Notes (HR name, salary, interview round...)"></textarea>
+        <button type="submit">Add Application</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>My Applications</h2>
+        <div>
+          <input type="text" id="search" placeholder="Search company or role">
+          <select id="filter">
+            <option value="">All status</option>
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+          </select>
+        </div>
+      </div>
+      <div id="list"></div>
+    </section>
+  </main>
+
+  <footer>Made by Anisha Shedage &middot; <a href="index.html">Back to portfolio</a></footer>
+  <script src="careerpilot.js"></script>
+</body>
+</html>
